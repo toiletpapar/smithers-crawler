@@ -1,0 +1,35 @@
+{
+  "name": "smithers-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/crawl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "crawl": "set \"GOOGLE_APPLICATION_CREDENTIALS=credentials/gcloud.json\" & set \"DB_SECRET_NAME=local-psql\"&& node --max_old_space_size=500 ./build/crawl.js",
+    "start": "node --max_old_space_size=500 ./build/crawl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toiletpapar/smithers-crawler.git"
+  },
+  "author": "Tyler Poon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toiletpapar/smithers-crawler/issues"
+  },
+  "homepage": "https://github.com/toiletpapar/smithers-crawler#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@ca-tyler/smithers-server-utils": "file:../smithers-server-utils/ca-tyler-smithers-server-utils-1.1.1.tgz",
+    "axios": "^1.4.0",
+    "bottleneck": "^2.19.5",
+    "node-html-parser": "^6.1.5"
+  }
+}
