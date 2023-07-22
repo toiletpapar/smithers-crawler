@@ -27,9 +27,6 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@ca-tyler/smithers-server-utils": "^1.1.1",
-    "axios": "^1.4.0",
-    "bottleneck": "^2.19.5",
-    "node-html-parser": "^6.1.5"
+    "@ca-tyler/smithers-server-utils": "^1.1.2"
   }
 }
