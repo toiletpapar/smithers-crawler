@@ -82,6 +82,7 @@ const updateDb = async (
   return
 }
 
+// TODO: Debate using transactions
 const main = async (db: Database) => {
   const webtoonLimiter = new Bottleneck({maxConcurrent: 1})  // How quickly to crawl webtoon
   const mangadexLimiter = new Bottleneck({maxConcurrent: 1}) // How quickly to crawl mangadex
