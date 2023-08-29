@@ -27,7 +27,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@ca-tyler/smithers-server-utils": "^1.1.8",
+    "@ca-tyler/smithers-server-utils": "^1.1.9",
     "bottleneck": "^2.19.5"
   }
 }
