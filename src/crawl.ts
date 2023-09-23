@@ -4,9 +4,11 @@ import Bottleneck from "bottleneck"
 const script = async () => {
   let db: Database | null = null
   try {
+    console.log('Starting crawl...')
     db = await Database.getInstance()
     await MangaRepository.syncManga(db, new MangaSyncOptions({onlyLatest: true}))
     await db.end()
+    console.log('Done!')
   } catch (err: any) {
     console.log("Unexpected problem encountered when crawling")
 
