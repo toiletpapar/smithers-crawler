@@ -1,9 +1,12 @@
-import { MangaRepository, Database, MangaSyncOptions, LogRepository, LogTypes } from "@ca-tyler/smithers-server-utils"
-import Bottleneck from "bottleneck"
+import { MangaRepository, Database, MangaSyncOptions, LogRepository, LogTypes, SmithersError, SmithersErrorTypes } from "@ca-tyler/smithers-server-utils"
 
 const script = async () => {
   let db: Database | null = null
   try {
+    if (!process.env.DATABASE_CONNECTION_STRING) {
+      throw new SmithersError(SmithersErrorTypes.DB_CONNECTION_NOT_FOUND, "No db connection string provided")
+    }
+
     console.log('Starting crawl...')
     db = await Database.getInstance()
     await MangaRepository.syncManga(db, new MangaSyncOptions({onlyLatest: true}))

@@ -9,7 +9,8 @@
     "watch": "tsc -w",
     "crawl": "set \"GOOGLE_APPLICATION_CREDENTIALS=credentials/gcloud.json\" & set \"DB_SECRET_NAME=local-psql\"&& node ./build/crawl.js",
     "profile": "set \"GOOGLE_APPLICATION_CREDENTIALS=credentials/gcloud.json\" & set \"DB_SECRET_NAME=local-psql\"&& node --inspect-brk ./build/crawl.js",
-    "start": "node ./build/crawl.js"
+    "start": "node ./build/crawl.js",
+    "start:env": "node --env-file=.env ./build/crawl.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@ca-tyler/smithers-server-utils": "^1.1.12",
+    "@ca-tyler/smithers-server-utils": "^2.0.3",
     "bottleneck": "^2.19.5"
   }
 }
